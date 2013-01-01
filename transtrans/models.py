@@ -1,0 +1,2 @@
+class TranslatedModel(object):
+    pass
