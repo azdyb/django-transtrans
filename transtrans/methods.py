@@ -15,7 +15,7 @@ def _initialized(self):
 
 
 def _new_translation(self):
-    model = self._meta.concrete_model
+    model = self.__class__
     translation_model = model.translations.related.model
     translation = translation_model(object=self)
     translation.dirty = True
@@ -115,4 +115,4 @@ def is_trans_uniq(trans, uniq):
         err.lang = key.lang
         errors.setdefault(key, []).append(err)
     return errors
-            
+

@@ -50,7 +50,7 @@ class MultilanguageModelForm(forms.ModelForm):
         initial = {}
         orig_lang = get_current_language()
         
-        if 'instance' in kwargs:
+        if kwargs.get('instance'):
             for lang in self.languages:
                 translation.activate(lang)
                 for field_name in multi_language_fields:
